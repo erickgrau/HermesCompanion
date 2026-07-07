@@ -158,7 +158,7 @@ Sections (each a grouped card, `bg/card`):
 
 1. **Server**
    - `Server` picker → current server name (`Hermes on Max`), teal value + `⇅`.
-   - Server URL row with globe icon (`http://127.0.0.1:8642`), mono.
+   - Server URL row with globe icon (`http://localhost:8642`), mono.
    - `Remove This Server` (danger).
 2. **Provider**
    - `Provider` picker (`Nous`) + caption explaining it's synced from the connected server.

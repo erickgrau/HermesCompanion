@@ -762,7 +762,7 @@ final class AppStore: ObservableObject {
         } else if let debugBaseURL = defaults.string(forKey: "debug_baseURL"), !debugBaseURL.isEmpty {
             baseURL = debugBaseURL
         } else {
-            let host = env["API_SERVER_HOST"].flatMap { ($0.isEmpty || $0 == "0.0.0.0") ? nil : $0 } ?? "127.0.0.1"
+            let host = env["API_SERVER_HOST"].flatMap { ($0.isEmpty || $0 == "0.0.0.0") ? nil : $0 } ?? "100.x.x.x"
             let port = env["API_SERVER_PORT"].flatMap { $0.isEmpty ? nil : $0 } ?? "\(AppConfig.defaultPort)"
             let scheme = env["API_SERVER_SCHEME"].flatMap { $0.isEmpty ? nil : $0 } ?? "http"
             baseURL = "\(scheme)://\(host):\(port)"
@@ -782,7 +782,7 @@ final class AppStore: ObservableObject {
             return config
         }
         let env = ProcessInfo.processInfo.environment
-        components.host = env["API_SERVER_HOST"].flatMap { ($0.isEmpty || $0 == "0.0.0.0") ? nil : $0 } ?? "127.0.0.1"
+        components.host = env["API_SERVER_HOST"].flatMap { ($0.isEmpty || $0 == "0.0.0.0") ? nil : $0 } ?? "100.x.x.x"
         return ConnectionConfig(baseURL: components.url?.absoluteString ?? config.baseURL, apiKey: config.apiKey, label: config.label)
     }
     #else
